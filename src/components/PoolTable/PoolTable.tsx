@@ -16,6 +16,9 @@ const pools = [
   {
     id: '0x7af84d60777413f90cc511a83cf702b128bc885f84d6ca8be4b60063328d907a',
   },
+  {
+    id: '0xf8f4afa64c443ff00630d089205140814c9c0ce79ff293d05913a161fcc7ec4a',
+  },
 ];
 
 const PoolTable: React.FC = () => {

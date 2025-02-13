@@ -1,5 +1,7 @@
 import { isHex } from 'viem';
 
+import PoolInfo from '@/components/PoolInfo/PoolInfo';
+
 export default async function PoolPage({
   params,
 }: {
@@ -22,7 +24,8 @@ export default async function PoolPage({
 
   return (
     <div>
-      Pool <code>{poolId}</code>
+      Pool ID <code>{poolId}</code>
+      <PoolInfo poolId={poolId} />
     </div>
   );
 }

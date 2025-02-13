@@ -69,9 +69,18 @@ export default function RootLayout({
                     href={siteConfig.links.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-medium hover:underline underline-offset-4"
+                    className="hover:underline underline-offset-4"
                   >
                     Contribute on GitHub
+                  </a>
+                  -{' '}
+                  <a
+                    href="https://envio.dev/app/moose-code/uniswap-v4-indexer"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:underline underline-offset-4"
+                  >
+                    Data provided by Envio
                   </a>
                 </div>
               </div>

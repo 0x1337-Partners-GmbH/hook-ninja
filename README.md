@@ -22,6 +22,7 @@ To add a hook to the database, see the [Hook database](./public/data/README.md) 
 - [Tailwind CSS](https://tailwindcss.com)
 - [Shadcn](https://ui.shadcn.com)
 - [viem](https://viem.sh)
+- [Envio](https://envio.dev)
 
 ## Resources
 
