@@ -24,7 +24,13 @@ export default async function HookPage({
         Hook <code>{address}</code>
       </h2>
       <HookDetails address={address} />
-      <HookPermissions hookAddress={address} />
+      <div className="flex flex-row gap-5">
+        <HookPermissions hookAddress={address} />
+        <div>
+          <h2>Pools Hooked</h2>
+          Coming soon
+        </div>
+      </div>
     </div>
   );
 
