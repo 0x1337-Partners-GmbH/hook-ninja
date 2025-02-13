@@ -23,16 +23,28 @@ export default function Home() {
           </Link>
         </p>
         <h3 className="text-lg font-bold mt-3">Hooks</h3>
-        <p>
-          <Link
-            className="text-blue-500 hover:underline"
-            href="/hook/0x0010d0D5dB05933Fa0D9F7038D365E1541a41888"
-          >
-            <code>
-              0x0010d0D5dB05933Fa0D9F7038D365E1541a41888
-            </code>
-          </Link>
-        </p>
+        <ul>
+          <li>
+            <Link
+              className="text-blue-500 hover:underline"
+              href="/hook/0x0010d0D5dB05933Fa0D9F7038D365E1541a41888"
+            >
+              <code>
+                0x0010d0D5dB05933Fa0D9F7038D365E1541a41888
+              </code>
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="text-blue-500 hover:underline"
+              href="/hook/0x51bba15255406cfe7099a42183302640ba7dafdc"
+            >
+              <code>
+                0x51bba15255406cfe7099a42183302640ba7dafdc
+              </code>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
