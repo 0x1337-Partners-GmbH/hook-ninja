@@ -1,5 +1,7 @@
 import { isAddress } from 'viem';
 
+import HookPermissions from '@/components/HookPermissions';
+
 export default async function HookPage({
   params,
 }: {
@@ -17,7 +19,10 @@ export default async function HookPage({
 
   return (
     <div>
-      Hook <code>{address}</code>
+      <h2 className="text-xl font-bold mb-3">
+        Hook <code>{address}</code>
+      </h2>
+      <HookPermissions hookAddress={address} />
     </div>
   );
 }
