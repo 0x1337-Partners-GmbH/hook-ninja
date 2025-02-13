@@ -1,0 +1,38 @@
+name: Lint and Build
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: ./package-lock.json
+
+      - name: ⚙️ Install
+        run: npm install
+
+      - name: 💅 Prettier
+        run: npm run format:check
+
+      - name: 📝 Lint
+        run: npm run lint
+
+      # TODO: Add tests
+
+      # Build is done on the Vercel side
+      # - name: 📦 Build
+      #   run: npm run build
