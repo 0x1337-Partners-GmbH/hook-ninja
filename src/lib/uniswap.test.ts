@@ -8,26 +8,24 @@ describe('decodePermissions', () => {
     const permissions =
       decodeHookPermissions(exampleAddress);
 
-    console.log(permissions);
-
     // 0x2400 = 9216 in decimal
     // In binary: 0010 0100 0000 0000
     // has the lowest bits '10 0100 0000 0000' which would cause the 'before initialize' and 'after add liquidity' hooks to be used.
     expect(permissions).toEqual({
-      BEFORE_INITIALIZE_FLAG: true,
-      AFTER_INITIALIZE_FLAG: false,
-      BEFORE_ADD_LIQUIDITY_FLAG: false,
-      AFTER_ADD_LIQUIDITY_FLAG: true,
-      BEFORE_REMOVE_LIQUIDITY_FLAG: false,
-      AFTER_REMOVE_LIQUIDITY_FLAG: false,
-      BEFORE_SWAP_FLAG: false,
-      AFTER_SWAP_FLAG: false,
-      BEFORE_DONATE_FLAG: false,
-      AFTER_DONATE_FLAG: false,
-      BEFORE_SWAP_RETURNS_DELTA_FLAG: false,
-      AFTER_SWAP_RETURNS_DELTA_FLAG: false,
-      AFTER_ADD_LIQUIDITY_RETURNS_DELTA_FLAG: false,
-      AFTER_REMOVE_LIQUIDITY_RETURNS_DELTA_FLAG: false,
+      BEFORE_INITIALIZE: true,
+      AFTER_INITIALIZE: false,
+      BEFORE_ADD_LIQUIDITY: false,
+      AFTER_ADD_LIQUIDITY: true,
+      BEFORE_REMOVE_LIQUIDITY: false,
+      AFTER_REMOVE_LIQUIDITY: false,
+      BEFORE_SWAP: false,
+      AFTER_SWAP: false,
+      BEFORE_DONATE: false,
+      AFTER_DONATE: false,
+      BEFORE_SWAP_RETURNS_DELTA: false,
+      AFTER_SWAP_RETURNS_DELTA: false,
+      AFTER_ADD_LIQUIDITY_RETURNS_DELTA: false,
+      AFTER_REMOVE_LIQUIDITY_RETURNS_DELTA: false,
     });
   });
 });

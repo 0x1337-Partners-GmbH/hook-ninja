@@ -1,5 +1,14 @@
 'use client';
 
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { decodeHookPermissions } from '@/lib/uniswap';
 
 interface Props {
@@ -14,11 +23,34 @@ const HookPermissions: React.FC<Props> = ({
   const permissions = decodeHookPermissions(hookAddress);
 
   return (
-    <div>
-      <h3 className="text-lg font-bold mb-3">
-        🔐 Permissions
-      </h3>
-      <pre>{JSON.stringify(permissions, null, 2)}</pre>
+    <div className="mt-4">
+      <Table>
+        <TableCaption>🔐 Permissions</TableCaption>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">
+              Permission
+            </TableHead>
+            <TableHead className="text-right">
+              Status
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {Object.entries(permissions).map(
+            ([key, value]) => (
+              <TableRow key={key}>
+                <TableCell className="font-medium">
+                  {key}
+                </TableCell>
+                <TableCell className="text-right">
+                  {value ? '✅' : '❌'}
+                </TableCell>
+              </TableRow>
+            )
+          )}
+        </TableBody>
+      </Table>
     </div>
   );
 };

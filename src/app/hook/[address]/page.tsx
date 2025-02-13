@@ -22,6 +22,7 @@ export default async function HookPage({
       <h2 className="text-xl font-bold mb-3">
         Hook <code>{address}</code>
       </h2>
+
       <HookPermissions hookAddress={address} />
     </div>
   );
