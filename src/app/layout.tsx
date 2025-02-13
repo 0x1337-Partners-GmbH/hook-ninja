@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(PRODUCTION_BASE_URL_WITH_PROTOCOL),
   title: siteConfig.metadata.title,
   description: siteConfig.metadata.description,
+  icons: {
+    icon: '/favicon.png',
+  },
   twitter: {
     creator: '@hugoo',
   },
