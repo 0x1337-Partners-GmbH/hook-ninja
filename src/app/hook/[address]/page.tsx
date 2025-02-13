@@ -2,6 +2,7 @@ import { isAddress } from 'viem';
 
 import HookDetails from '@/components/HookDetails';
 import HookPermissions from '@/components/HookPermissions';
+import HookPools from '@/components/HookPools';
 
 export default async function HookPage({
   params,
@@ -19,21 +20,18 @@ export default async function HookPage({
   }
 
   return (
-    <div>
+    <div className="w-full">
       <h2 className="text-xl font-bold mb-3">
         Hook <code>{address}</code>
       </h2>
       <HookDetails address={address} />
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row gap-5 pt-5">
         <HookPermissions hookAddress={address} />
-        <div>
-          <h2>Pools Hooked</h2>
-          Coming soon
-        </div>
+        <HookPools hookAddress={address} />
       </div>
     </div>
   );
 
-  // TODO: add pools conencted to this hook, add networks, add link to explorer etc.
+  // TODO: add networks, add link to explorer etc.
   // add "TVL"? Add swap volume?
 }

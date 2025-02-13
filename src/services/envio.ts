@@ -51,3 +51,23 @@ export const getPoolIdInfo = async (
     hook: data.Pool[0].hooks,
   };
 };
+
+export const getPoolsHookedToHook = async (
+  hookAddress: `0x${string}`
+): Promise<string[]> => {
+  const data = (await graffle.gql`
+    query poolId ($hookAddress: String!) {
+      Pool (where: { hooks: { _eq: $hookAddress } }) {
+        id
+    }
+  }
+`.send({
+    hookAddress,
+  })) as {
+    Pool: {
+      id: string;
+    }[];
+  };
+
+  return data.Pool.map((pool) => pool.id);
+};
