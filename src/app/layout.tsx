@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { siteConfig } from '@/configs/site';
+import { PRODUCTION_BASE_URL_WITH_PROTOCOL } from '@/constants';
 import { Providers } from '@/providers';
 
 import './globals.css';
@@ -17,8 +18,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(PRODUCTION_BASE_URL_WITH_PROTOCOL),
   title: siteConfig.metadata.title,
   description: siteConfig.metadata.description,
+  twitter: {
+    creator: '@hugoo',
+  },
+  openGraph: {
+    title: siteConfig.metadata.title,
+    description: siteConfig.metadata.description,
+    siteName: siteConfig.metadata.siteName,
+    // images: [
+    //   {
+    //     url: getDefaultOgImageUrl(),
+    //   },
+    // ],
+  },
 };
 
 export default function RootLayout({
@@ -33,6 +48,11 @@ export default function RootLayout({
       >
         <Providers>
           <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <div>
+              <h1 className="text-2xl font-bold">
+                🪝🥷 Hook.ninja
+              </h1>
+            </div>
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
               {children}
             </main>

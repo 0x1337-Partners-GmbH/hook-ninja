@@ -1,0 +1,1 @@
+export const PRODUCTION_BASE_URL_WITH_PROTOCOL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
