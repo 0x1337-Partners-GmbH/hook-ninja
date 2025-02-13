@@ -40,8 +40,11 @@ const HookDetails: React.FC<Props> = ({ address }) => {
   if (!hookData) {
     return (
       <p>
-        Contribute to the database by adding{' '}
-        <a href="https://github.com/0x1337-Partners-GmbH/hook-ninja/tree/main/public/data">
+        💡 Contribute to the database by adding{' '}
+        <a
+          className="text-blue-500 hover:underline"
+          href="https://github.com/0x1337-Partners-GmbH/hook-ninja/tree/main/public/data"
+        >
           details for this hook
         </a>
         .

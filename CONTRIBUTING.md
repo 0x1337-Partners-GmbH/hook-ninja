@@ -2,14 +2,14 @@
 
 We want Hook.ninja to be a community driven project! Every PR is welcome 🤗
 
-## Getting Started
+## 🚀 Getting Started
 
 1. Fork the repository
 2. Clone your fork
 3. Build 🧙✨
 4. [Send a PR](https://github.com/0x1337-Partners-GmbH/hook-ninja/compare)
 
-## Development Guidelines
+## 🧑‍💻 Development Guidelines
 
 ### Code Style
 
@@ -28,13 +28,17 @@ We want Hook.ninja to be a community driven project! Every PR is welcome 🤗
 4. Link any related issues
 5. Request review from maintainers
 
-## Bug Reports and Feature Requests
+## 📚 Hook database
+
+You can add details for hooks to the database by adding a new file to the [`hooks`](./public/data/hooks) directory.
+
+## 🐛 Bug Reports and Feature Requests
 
 - Use GitHub Issues to report bugs or request features
 - Include detailed descriptions and steps to reproduce
 - Add relevant labels to your issues
 
-## License
+## 📝 License
 
 By contributing to Hook.ninja, you agree that your contributions will be licensed under the project's license.
 
