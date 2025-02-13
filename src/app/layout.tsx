@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     title: siteConfig.metadata.title,
     description: siteConfig.metadata.description,
     siteName: siteConfig.metadata.siteName,
-    // images: [
-    //   {
-    //     url: getDefaultOgImageUrl(),
-    //   },
-    // ],
+    images: [
+      {
+        url: `${PRODUCTION_BASE_URL_WITH_PROTOCOL}/og-image.png`,
+      },
+    ],
   },
 };
 
