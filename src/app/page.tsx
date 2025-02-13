@@ -1,9 +1,16 @@
 import Link from 'next/link';
 
+import SearchInput from '@/components/SearchInput';
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-4 items-center ">
       <div>
+        <p>
+          Inspect, analyse and debug Uniswap V4 hooks and
+          pools.
+        </p>
+        <SearchInput />
         <h3 className="text-lg font-bold">Pools</h3>
         <p>
           <Link
