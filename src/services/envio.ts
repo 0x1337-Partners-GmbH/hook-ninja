@@ -1,4 +1,5 @@
 import { Graffle } from 'graffle';
+import { getAddress } from 'viem';
 
 const ENVIO_BASE_URL =
   'https://indexer.dev.hyperindex.xyz/d1cbd01/v1/graphql';
@@ -62,7 +63,8 @@ export const getPoolsHookedToHook = async (
     }
   }
 `.send({
-    hookAddress,
+    // the graphql db is case sensitive
+    hookAddress: getAddress(hookAddress),
   })) as {
     Pool: {
       id: string;
