@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Link from 'next/link';
 
 import { siteConfig } from '@/configs/site';
 import { PRODUCTION_BASE_URL_WITH_PROTOCOL } from '@/constants';
@@ -50,7 +51,9 @@ export default function RootLayout({
           <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
             <div>
               <h1 className="text-2xl font-bold">
-                🪝🥷 Hook.ninja
+                <Link href="/" className="hover:underline">
+                  🪝🥷 Hook.ninja
+                </Link>
               </h1>
             </div>
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -65,7 +68,7 @@ export default function RootLayout({
                     rel="noreferrer"
                     className="font-medium hover:underline underline-offset-4"
                   >
-                    GitHub
+                    Contribute on GitHub
                   </a>
                 </div>
               </div>
