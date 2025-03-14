@@ -9,6 +9,7 @@ interface Props {
 }
 
 const HookDetails: React.FC<Props> = ({ address }) => {
+  address = address.toLowerCase();
   const [isLoading, setIsLoading] = useState(false);
   const [hookData, setHookData] = useState<HookData | null>(
     null
