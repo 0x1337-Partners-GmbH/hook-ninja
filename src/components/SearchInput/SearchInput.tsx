@@ -37,9 +37,9 @@ const SearchInput: React.FC = () => {
   }, [search]);
 
   return (
-    <div className="flex flex-col w-full items-center space-x-2">
+    <div className="flex flex-col items-center space-x-2 w-full">
       <Input
-        className="font-mono"
+        className="font-mono max-w-[500px] "
         type="text"
         value={search}
         placeholder="Pool ID / Hook Address"

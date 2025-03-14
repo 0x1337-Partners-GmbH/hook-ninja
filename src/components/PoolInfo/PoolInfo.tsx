@@ -29,9 +29,9 @@ const PoolInfo: React.FC<Props> = ({ poolId }) => {
 
   return (
     <div>
-      {data.hook && (
+      {data.hook ? (
         <>
-          Hook:{' '}
+          🪝 Hook:{' '}
           <Link
             className="underline font-mono"
             href={`/hook/${data.hook}`}
@@ -39,6 +39,8 @@ const PoolInfo: React.FC<Props> = ({ poolId }) => {
             {data.hook}
           </Link>
         </>
+      ) : (
+        <div>This pool has no hook</div>
       )}
       <pre className="mt-5">
         {JSON.stringify(data, null, 2)}

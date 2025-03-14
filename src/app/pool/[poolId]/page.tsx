@@ -23,8 +23,10 @@ export default async function PoolPage({
   }
 
   return (
-    <div>
-      Pool ID <code>{poolId}</code>
+    <div className="w-full">
+      <h2 className="text-xl font-bold mb-3">
+        Pool <code>{poolId}</code>
+      </h2>
       <PoolInfo poolId={poolId} />
     </div>
   );

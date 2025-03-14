@@ -12,13 +12,14 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
+// Load this in a less naive way, from the data folder or elsewhere
 const hooks = [
   {
     name: 'Flaunch',
-    address: '0x51bba15255406cfe7099a42183302640ba7dafdc',
+    address: '0x51Bba15255406Cfe7099a42183302640ba7dAFDC',
   },
   {
-    name: '???',
+    name: 'Bunni',
     address: '0x0010d0D5dB05933Fa0D9F7038D365E1541a41888',
   },
 ];

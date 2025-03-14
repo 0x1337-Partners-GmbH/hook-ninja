@@ -1,6 +1,8 @@
 import HookTable from '@/components/HookTable';
 import PoolTable from '@/components/PoolTable';
 import SearchInput from '@/components/SearchInput';
+import { Button } from '@/components/ui/button';
+import { GITHUB_HOOKS_CONTRIBUTE_URL } from '@/constants';
 
 export default function Home() {
   return (
@@ -9,6 +11,14 @@ export default function Home() {
         Inspect, analyse and debug Uniswap V4 hooks and
         pools.
       </p>
+      <a href={GITHUB_HOOKS_CONTRIBUTE_URL}>
+        <Button
+          size="lg"
+          className="mt-4 bg-[#FC72FF] text-xl"
+        >
+          👉 Add your hook 👈
+        </Button>
+      </a>
       <div className="flex items-center h-[400px] w-4/5">
         <SearchInput />
       </div>
