@@ -75,7 +75,7 @@ export default function RootLayout({
                   </a>
                   -{' '}
                   <a
-                    href="https://envio.dev/app/moose-code/uniswap-v4-indexer"
+                    href="https://envio.dev/app/enviodev/uniswap-v4-indexer"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:underline underline-offset-4"

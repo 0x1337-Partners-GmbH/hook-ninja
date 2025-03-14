@@ -2,7 +2,7 @@ import { Graffle } from 'graffle';
 import { getAddress } from 'viem';
 
 const ENVIO_BASE_URL =
-  'https://indexer.dev.hyperindex.xyz/d1cbd01/v1/graphql';
+  'https://enviodev-69b6884.dedicated.hyperindex.xyz/v1/graphql';
 
 const graffle = Graffle.create().transport({
   url: ENVIO_BASE_URL,
@@ -16,8 +16,8 @@ export const getPoolIdInfo = async (
       Pool (where: { id: { _eq: $poolId } }) {
         id
         chainId
-        currency0
-        currency1
+        token0
+        token1
         hooks
     }
   }
@@ -27,8 +27,8 @@ export const getPoolIdInfo = async (
     Pool: {
       id: string;
       chainId: number;
-      currency0: string;
-      currency1: string;
+      token0: string;
+      token1: string;
       hooks: string;
     }[];
   };
@@ -47,15 +47,15 @@ export const getPoolIdInfo = async (
   return {
     poolId: data.Pool[0].id,
     chainIds: allChainIds,
-    currency0: data.Pool[0].currency0,
-    currency1: data.Pool[0].currency1,
+    token0: data.Pool[0].token0.split('_')[1],
+    token1: data.Pool[0].token1.split('_')[1],
     hook: data.Pool[0].hooks,
   };
 };
 
 export const getPoolsHookedToHook = async (
   hookAddress: `0x${string}`
-): Promise<string[]> => {
+): Promise<{ poolId: string; chainId: number }[]> => {
   const data = (await graffle.gql`
     query poolId ($hookAddress: String!) {
       Pool (where: { hooks: { _eq: $hookAddress } }) {
@@ -71,5 +71,13 @@ export const getPoolsHookedToHook = async (
     }[];
   };
 
-  return data.Pool.map((pool) => pool.id);
+  return data.Pool.map((pool) => ({
+    poolId: pool.id.split('_')[1],
+    chainId: Number(pool.id.split('_')[0]),
+  })).sort((a, b) => {
+    if (a.chainId === b.chainId) {
+      return a.poolId.localeCompare(b.poolId);
+    }
+    return a.chainId - b.chainId;
+  });
 };

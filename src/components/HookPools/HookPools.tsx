@@ -39,17 +39,23 @@ const HookPools: React.FC<Props> = ({ hookAddress }) => {
       <TableHeader>
         <TableRow>
           <TableHead>Pools ID</TableHead>
+          <TableHead>Chain ID</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {data.map((pool) => (
           <TableRow
-            key={pool}
-            onClick={() => router.push(`/pool/${pool}`)}
+            key={`${pool.poolId}-${pool.chainId}`}
+            onClick={() =>
+              router.push(`/pool/${pool.poolId}`)
+            }
             className="cursor-pointer"
           >
             <TableCell>
-              <code>{pool}</code>
+              <code>{pool.poolId}</code>
+            </TableCell>
+            <TableCell>
+              <code>{pool.chainId}</code>
             </TableCell>
           </TableRow>
         ))}
