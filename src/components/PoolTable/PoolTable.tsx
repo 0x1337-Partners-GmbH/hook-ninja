@@ -29,7 +29,7 @@ const PoolTable: React.FC = () => {
       <TableCaption>Pools</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>ID</TableHead>
+          <TableHead>Pool ID</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

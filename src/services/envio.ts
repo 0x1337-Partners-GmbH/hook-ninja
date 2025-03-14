@@ -13,7 +13,7 @@ export const getPoolIdInfo = async (
 ) => {
   const data = (await graffle.gql`
     query poolId ($poolId: String!) {
-      Pool (where: { id: { _eq: $poolId } }) {
+      Pool (where: { id: { _ilike: $poolId } }) {
         id
         chainId
         token0
@@ -22,7 +22,7 @@ export const getPoolIdInfo = async (
     }
   }
 `.send({
-    poolId,
+    poolId: `%${poolId}`,
   })) as {
     Pool: {
       id: string;

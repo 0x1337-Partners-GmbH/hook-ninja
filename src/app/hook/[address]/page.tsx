@@ -22,7 +22,7 @@ export default async function HookPage({
   return (
     <div className="w-full">
       <h2 className="text-xl font-bold mb-3">
-        Hook <code>{address}</code>
+        🪝 Hook <code>{address}</code>
       </h2>
       <HookDetails address={address} />
       <div className="flex flex-row gap-5 pt-5">
