@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 
+import { getChain } from '@/chains';
 import {
   Table,
   TableBody,
@@ -38,8 +39,10 @@ const HookPools: React.FC<Props> = ({ hookAddress }) => {
       <TableCaption>Pools</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Pools ID</TableHead>
-          <TableHead>Chain ID</TableHead>
+          <TableHead>
+            This hook is connected to these pools
+          </TableHead>
+          <TableHead>Chain</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -55,7 +58,10 @@ const HookPools: React.FC<Props> = ({ hookAddress }) => {
               <code>{pool.poolId}</code>
             </TableCell>
             <TableCell>
-              <code>{pool.chainId}</code>
+              <code>
+                {getChain(pool.chainId)?.name ||
+                  pool.chainId}
+              </code>
             </TableCell>
           </TableRow>
         ))}

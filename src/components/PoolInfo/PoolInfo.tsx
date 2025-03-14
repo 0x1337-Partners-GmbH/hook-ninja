@@ -3,6 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 
+import { getChain } from '@/chains';
 import { getPoolIdInfo } from '@/services/envio';
 
 interface Props {
@@ -29,7 +30,10 @@ const PoolInfo: React.FC<Props> = ({ poolId }) => {
 
   return (
     <div>
-      {data.hook ? (
+      {data.hook ===
+      '0x0000000000000000000000000000000000000000' ? (
+        <div>This pool has no hook</div>
+      ) : (
         <>
           🪝 Hook:{' '}
           <Link
@@ -39,12 +43,42 @@ const PoolInfo: React.FC<Props> = ({ poolId }) => {
             {data.hook}
           </Link>
         </>
-      ) : (
-        <div>This pool has no hook</div>
       )}
-      <pre className="mt-5">
-        {JSON.stringify(data, null, 2)}
-      </pre>
+
+      <div>
+        This pool is available on the following chains:
+        <ul>
+          {data.chainIds.map((chainId) => {
+            const chain = getChain(chainId);
+
+            if (!chain) {
+              return null;
+            }
+
+            return (
+              <li key={chainId}>
+                {chain?.name} -{' '}
+                <a
+                  href={`https://geckoterminal.com/${chain?.geckoTerminalSlug}/pools/${poolId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-purple-700/10 ring-inset">
+                    View on GeckoTerminal
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
+      <div>
+        Token0: <code>{data.token0}</code>
+      </div>
+      <div>
+        Token1: <code>{data.token1}</code>
+      </div>
     </div>
   );
 };
