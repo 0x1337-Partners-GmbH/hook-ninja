@@ -89,7 +89,16 @@ export default function RootLayout({
                     rel="noreferrer"
                     className="hover:underline underline-offset-4"
                   >
-                    Data provided by Envio
+                    Data by Envio
+                  </a>
+                  -{' '}
+                  <a
+                    href="https://docs.uniswap.org/contracts/v4/concepts/hooks"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:underline underline-offset-4"
+                  >
+                    Uniswap Hooks Docs
                   </a>
                 </div>
               </div>
